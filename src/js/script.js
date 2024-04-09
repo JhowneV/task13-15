@@ -205,3 +205,71 @@ document.body.addEventListener("keydown", event => {
         closeModal();
     }
 })
+//////////////////////////////////////////////////////////////////////////////////////
+//TF 13
+
+document.addEventListener('DOMContentLoaded', function() {
+    const logo = document.querySelector('.filmtitle');
+    logo.addEventListener('click', function() {
+        window.location.href = '/src/index.html';
+    });
+});
+
+///////////////////////////////////////////////////////////////////////////////////////
+//TF 14-15 Library Button
+document.addEventListener('DOMContentLoaded', function() {
+    const libraryButton = document.querySelector('.header-link.libr');
+    libraryButton.click();
+});
+
+//Watched and Queue Movie
+const watchedButton = document.getElementById('watched-btn');
+const queueButton = document.getElementById('queue-btn');
+
+// Add event listeners to the buttons
+watchedButton.addEventListener('click', displayWatchedMovies);
+queueButton.addEventListener('click', displayQueue);
+
+// Function to display watched movies
+function displayWatchedMovies() {
+
+    const watchedMovies = JSON.parse(localStorage.getItem('watchedMovies')) || [];
+
+    const moviesContainer = document.getElementById('movies-container');
+    moviesContainer.innerHTML = '';
+
+    watchedMovies.forEach(movie => {
+        const movieElement = createMovieElement(movie);
+        moviesContainer.appendChild(movieElement);
+    });
+}
+
+// Function to display queue movies
+function displayQueue() {
+   
+    const queueMovies = JSON.parse(localStorage.getItem('queueMovies')) || [];
+
+    const moviesContainer = document.getElementById('movies-container');
+    moviesContainer.innerHTML = '';
+
+    queueMovies.forEach(movie => {
+        const movieElement = createMovieElement(movie);
+        moviesContainer.appendChild(movieElement);
+    });
+}
+
+// Function to create a movie element
+function createMovieElement(movie) {
+    const movieElement = document.createElement('div');
+    movieElement.classList.add('movie');
+    movieElement.innerHTML = `
+        <h2>${movie.title}</h2>
+        <p>${movie.overview}</p>
+        <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+    `;
+    return movieElement;
+}
+
+
+
+
