@@ -206,23 +206,18 @@ document.body.addEventListener("keydown", event => {
     }
 })
 //////////////////////////////////////////////////////////////////////////////////////
-//TF 13
-
+//TF 13-15
+// Library Button
 document.addEventListener('DOMContentLoaded', function() {
-    const logo = document.querySelector('.filmtitle');
-    logo.addEventListener('click', function() {
-        window.location.href = '/src/index.html';
+    const libraryButton = document.querySelector('.header-link.libr');
+
+    libraryButton.addEventListener('click', function() {
+        const mainElement = document.getElementById('main');
+        mainElement.removeAttribute('id');
     });
 });
 
-///////////////////////////////////////////////////////////////////////////////////////
-//TF 14-15 Library Button
-document.addEventListener('DOMContentLoaded', function() {
-    const libraryButton = document.querySelector('.header-link.libr');
-    libraryButton.click();
-});
-
-//Watched and Queue Movie
+// Watched and Queue Movie Buttons
 const watchedButton = document.getElementById('watched-btn');
 const queueButton = document.getElementById('queue-btn');
 
@@ -232,8 +227,7 @@ queueButton.addEventListener('click', displayQueue);
 
 // Function to display watched movies
 function displayWatchedMovies() {
-
-    const watchedMovies = JSON.parse(localStorage.getItem('watchedMovies')) || [];
+    const watchedMovies = JSON.parse(localStorage.getItem('movie-watched')) || [];
 
     const moviesContainer = document.getElementById('movies-container');
     moviesContainer.innerHTML = '';
@@ -246,8 +240,7 @@ function displayWatchedMovies() {
 
 // Function to display queue movies
 function displayQueue() {
-   
-    const queueMovies = JSON.parse(localStorage.getItem('queueMovies')) || [];
+    const queueMovies = JSON.parse(localStorage.getItem('movie-queue')) || [];
 
     const moviesContainer = document.getElementById('movies-container');
     moviesContainer.innerHTML = '';
@@ -257,7 +250,6 @@ function displayQueue() {
         moviesContainer.appendChild(movieElement);
     });
 }
-
 
 
 
