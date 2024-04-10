@@ -217,6 +217,29 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+function createMovieElement(movieTitle) {
+    const movieEl = document.createElement('div');
+    movieEl.classList.add('movie');
+    movieEl.innerHTML = `
+        <h3>${movieTitle}</h3>
+        <button onclick="removeFromLibrary('${movieTitle}', 'watched')">Remove from Watched</button>
+        <button onclick="removeFromLibrary('${movieTitle}', 'queue')">Remove from Queue</button>
+    `;
+    return movieEl;
+}
+
+function removeFromLibrary(movieTitle, listType) {
+    let list = JSON.parse(localStorage.getItem(`movie-${listType}`)) || [];
+    list = list.filter(title => title !== movieTitle);
+    localStorage.setItem(`movie-${listType}`, JSON.stringify(list));
+    // Refresh the displayed list
+    if (listType === 'watched') {
+        displayWatchedMovies();
+    } else {
+        displayQueue();
+    }
+}
+
 // Watched and Queue Movie Buttons
 const watchedButton = document.getElementById('watched-btn');
 const queueButton = document.getElementById('queue-btn');
