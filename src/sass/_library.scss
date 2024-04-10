@@ -273,41 +273,64 @@ main {
 //     padding: 20px;
 // }
 
-.watchedmovies {
-    margin: auto;
-    width: 80%;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+// .watchedmovies {
+//     margin: auto;
+//     width: 80%;
+//     background: #fff;
+//     padding: 20px;
+//     border-radius: 8px;
+//     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-}
+// }
 
-.movies-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
+// .movies-list {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+//     gap: 20px;
+// }
 
-.movies-list {
-    background: #eee;
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
-}
+// .movies-list {
+//     background: #eee;
+//     border-radius: 8px;
+//     padding: 10px;
+//     box-shadow: 0 5px 15px rgba(0, 0, 0, .1);
+// }
+
+// .button-with-heading {
+//     background-color: transparent;
+//     border: none;
+//     padding: 10px;
+
+// }
+
+// .heading-text {
+//     font-size: 1.5rem;
+//     font-weight: bold;
+
+// }
 
 .button-with-heading {
-    background-color: transparent;
-    border: none;
+    margin: 10px;
     padding: 10px;
-
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.heading-text {
-    font-size: 1.5rem;
-    font-weight: bold;
-
+.button-with-heading:hover {
+    background-color: gray;
 }
+
+.movie {
+    margin: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
 
 /* Adjustments for small screens */
 @media screen and (max-width: 600px) {
@@ -319,3 +342,4 @@ main {
         grid-template-columns: 1fr;
     }
 }
+

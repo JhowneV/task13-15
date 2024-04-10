@@ -5,9 +5,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>TASK 13-15</title>
-    <link rel="stylesheet" href="./sass/_library.scss" />
+    <link rel="stylesheet" href="/src/sass/_library.scss" />
     <!-- <script type="module" src="./index.js"></script> -->
-    <link rel="stylesheet" href="./css/styles.css" />
+    <!-- <link rel="stylesheet" href="./css/styles.css" /> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -20,14 +20,14 @@
         <div class="header-top">
             <div class="header-top-left">
                 <a class="filmtitle" href="/src/index.html">
-                    <img class="film" src="./images/film.png" alt="film">
+                    <img class="film" src="/src/images/film.png" alt="film">
                     <h1 class="page-title">Filmoteka</h1>
                 </a>
             </div>
             <div class="header-top-right">
                 <div class="mylibrary">
                     <a class="header-link homebtn" href="/src/index.html">HOME</a>
-                    <button class="header-link libr active" href="/src/library.html" type="submit">MY LIBRARY</button>
+                    <a class="header-link libr active" href="/src/partials/library.html" type="submit">MY LIBRARY</a>
                 </div>
             </div>
         </div>
@@ -37,7 +37,7 @@
                 <input type="text" name="query" autocomplete="off" placeholder="Search for movies..." id="search-input">
                 <button class="search-button" type="submit"><i class="fa fa-search"></i></button>
             </form>
-            <img class="srcline" src="./images/Line 1.png" alt="line">
+            <img class="srcline" src="/src/images/Line 1.png" alt="line">
         </div>
 
     </header>
@@ -47,12 +47,14 @@
         <section>
             <div class="watchedmovies" id="watched-movies">
                 <button id="watched-btn" class="button-with-heading">
-                    <span class="heading-text">Watched Movie</span>
+                    <span class="heading-text">Watched Movies</span>
                 </button>
                 <button id="queue-btn" class="button-with-heading">
                     <span class="heading-text">Queue</span>
                 </button>
             </div>
+            <!-- Container for displaying movies -->
+            <div id="movies-list"></div>
         </section>
 
         <section class="section">
@@ -77,7 +79,7 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <div class="modal-body">
-                <img class="modal-poster" id="modal-poster" src="./images/Rectangle 18.jpg" alt="title">
+                <img class="modal-poster" id="modal-poster" src="/src/images/Rectangle 18.jpg" alt="title">
                 <div id="modal-details">
                     <h2 id="modal-title">A FISTFUL OF LEAD</h2>
                     <p id="modal-vote">Vote/Votes:</p>
@@ -101,7 +103,7 @@
     <!-- ❗️❗️❗️ Add partials like so for every page -->
 
     <include src="partials/task4_footer.html"></include>
-    <script src="./js/script.js" type="module"></script>
+    <script src="/src/index.js" type="module"></script>
 
 </body>
 
