@@ -1,15 +1,5 @@
 //////////////////////////////////////////////////////////////////////////////////////
 //TF 13-15
-// Library Button
-document.addEventListener('DOMContentLoaded', function() {
-    const libraryButton = document.querySelector('.header-link.libr');
-
-    libraryButton.addEventListener('click', function() {
-        const mainElement = document.getElementById('main');
-        mainElement.removeAttribute('id');
-    });
-});
-
 function createMovieElement(movieTitle) {
     const movieEl = document.createElement('div');
     movieEl.classList.add('movie');
@@ -66,3 +56,25 @@ function displayQueue() {
         moviesContainer.appendChild(movieElement);
     });
 }
+
+// ///////////////////////////////////////////////
+// // Sample movie data
+// const movie = {
+//     title: "Kung Fu Panda 4",
+//     year: 2010,
+//     director: "Christopher Nolan"
+// };
+
+// // Serialize the movie data
+// const serializedMovie = JSON.stringify(movie);
+
+// // Store the serialized movie data in local storage
+// localStorage.setItem('movie', serializedMovie);
+
+// // Retrieve the serialized movie data from local storage
+// const storedMovie = localStorage.getItem('movie');
+
+// // Deserialize the stored movie data back into its original format
+// const deserializedMovie = JSON.parse(storedMovie);
+
+// console.log(deserializedMovie); // Output: { title: "Inception", year: 2010, director: "Christopher Nolan" }
